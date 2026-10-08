@@ -143,11 +143,11 @@
     filter: drop-shadow(0 8px 10px rgba(120, 30, 70, .28));
     animation: bob var(--bd, 4.6s) ease-in-out var(--bl, 0s) infinite, sway var(--sd, 6s) ease-in-out var(--bl, 0s) infinite; }
 
-  .note { position: relative; padding: 5.6rem 0 6rem; }
+  .note { position: relative; padding: 5.6rem 0 8rem; }
   .note .stk { position: absolute; }
-  .note .c1 { left: -2%; top: 0; width: 42%; max-width: 11rem; --r: -12deg; --bd: 5s; }
-  .note .c2 { right: -3%; bottom: 0; width: 48%; max-width: 12.5rem; --r: 8deg; --bd: 4.4s; --bl: -2s; --sd: 6.8s; }
-  .note .n3 { right: 4%; top: 1%; width: 22%; max-width: 5.5rem; --r: 12deg; --bd: 3.8s; --bl: -1s; }
+  .note .c1 { left: -2%; top: .2rem; z-index: 2; width: 32%; max-width: 9rem; --r: -12deg; --bd: 5s; }
+  .note .c2 { right: -3%; bottom: -.4rem; z-index: 2; width: 40%; max-width: 10rem; --r: 8deg; --bd: 4.4s; --bl: -2s; --sd: 6.8s; }
+  .note .n3 { right: 4%; top: 1%; z-index: 2; width: 22%; max-width: 5.5rem; --r: 12deg; --bd: 3.8s; --bl: -1s; }
   .card { position: relative; z-index: 1; margin-inline: 1.6rem; padding: 2.8rem 1.1rem 2.2rem; text-align: center; border-radius: 1.4rem; transform: rotate(-1.2deg);
     background: radial-gradient(rgba(240, 138, 166, .2) 1.6px, transparent 1.8px) 0 0 / 18px 18px, var(--paper);
     box-shadow: 0 18px 34px -18px rgba(120, 30, 70, .5), 0 0 0 1px var(--line); outline: 2px dashed var(--accent); outline-offset: -11px; }
