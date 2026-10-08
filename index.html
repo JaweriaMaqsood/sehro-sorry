@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#fbeef0">
+<title>Sehro Ke Naam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Kalam:wght@400;700&family=Mulish:wght@400;600;800&display=swap">
+<style>
+  :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<style>
+  /* Layout: one quiet column, a dawn glow rising behind it. The big moment is the question at the end. */
+  :root {
+    --bg: #fbeef0;
+    --bg2: #f8d6de;
+    --blend: multiply;
+    --stk-bg: transparent;
+    --stk-pad: 0px;
+    --card: #fff8f9;
+    --paper: #fff6ec;
+    --ink: #3a1630;
+    --muted: #7a5368;
+    --accent: #d1385f;
+    --accent-ink: #ffffff;
+    --soft: #f6dbe2;
+    --line: #ebc6d1;
+    --display: "Instrument Serif", "Georgia", serif;
+    --hand: "Kalam", "Segoe Print", cursive;
+    --body: "Mulish", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --blend: normal; --stk-bg: #ffffff; --stk-pad: .35rem; --bg: #160f2a; --bg2: #2a1a48; --card: #21173f; --paper: #33244f; --ink: #fbe8ee; --muted: #c3a6bd;
+      --accent: #ff7d9d; --accent-ink: #2a0c1a; --soft: #2c2050; --line: #3a2b5f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --blend: normal; --stk-bg: #ffffff; --stk-pad: .35rem; --bg: #160f2a; --bg2: #2a1a48; --card: #21173f; --paper: #33244f; --ink: #fbe8ee; --muted: #c3a6bd;
+    --accent: #ff7d9d; --accent-ink: #2a0c1a; --soft: #2c2050; --line: #3a2b5f;
+    color-scheme: dark;
+  }
+
+  body { background: var(--bg); background-image: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%); background-repeat: no-repeat; color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.7; }
+  * { box-sizing: border-box; }
+
+  main { max-width: 40rem; margin-inline: auto; padding-inline: 1.25rem; padding-block: 2.5rem 4rem; display: grid; gap: 4rem; }
+
+  .eyebrow { font-size: .78rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(5rem, 24vw, 9.5rem); line-height: .9; margin: .6rem 0 0; letter-spacing: -.02em; color: var(--accent); }
+  .cycle { font-family: var(--hand); font-size: 1.6rem; color: var(--ink); min-height: 2.4rem; margin-top: .6rem; }
+  .cycle span { display: inline-block; transition: opacity .35s ease, transform .35s ease; }
+  .cycle span.out { opacity: 0; transform: translateY(6px); }
+  .lede { max-width: 30rem; color: var(--muted); font-size: 1.05rem; margin: 1rem 0 0; }
+
+  h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 6vw, 2.5rem); line-height: 1.1; margin: 0 0 1rem; text-wrap: balance; }
+  p { margin: 0 0 1rem; }
+  .letter p { max-width: 36rem; font-size: 1.06rem; }
+
+  .sorry { display: grid; gap: .55rem; }
+  .sorry p { margin: 0; font-family: var(--hand); font-size: 1.3rem; line-height: 1.5; max-width: 34rem; }
+  .sorry p.big { font-family: var(--hand); font-style: normal; font-weight: 700; font-size: 1.45rem; line-height: 1.5; color: var(--accent); margin-top: .35rem; }
+
+
+
+  .love { font-family: var(--hand); font-weight: 700; font-size: 1.7rem; color: var(--accent); letter-spacing: .04em; }
+
+  .promises { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .9rem; }
+  .promises li { position: relative; padding-left: 2rem; max-width: 34rem; }
+  .promises li::before {
+    content: ""; position: absolute; left: 0; top: .5em; width: 1.05rem; height: 1.05rem; background: var(--accent);
+    -webkit-mask: var(--heart) center / contain no-repeat; mask: var(--heart) center / contain no-repeat;
+    --heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.6 1.1 5.4 3.2C13.8 6.1 15.4 5 17.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E");
+  }
+
+  .ask { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 1.5rem; padding: 3.4rem 1.25rem 2.8rem; margin-bottom: 1.5rem; }
+  .ask h2 { text-align: center; }
+  .ask .sub { text-align: center; color: var(--muted); margin: 0; }
+  .stage { position: relative; height: 15rem; margin-top: 1rem; }
+  button { font: inherit; cursor: pointer; }
+  button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .yes {
+    position: absolute; left: 50%; top: 36%; transform: translate(-50%, -50%) scale(var(--s, 1)); transition: transform .35s ease;
+    background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 999px; padding: .95rem 1.7rem;
+    font-weight: 800; font-size: 1.05rem; white-space: nowrap; box-shadow: 0 10px 28px -10px var(--accent);
+  }
+  .no {
+    position: absolute; left: 0; top: 0; background: transparent; color: var(--muted); border: 1.5px solid var(--line);
+    border-radius: 999px; padding: .6rem 1.1rem; font-weight: 600; font-size: .95rem; white-space: nowrap;
+    transition: left .35s ease, top .35s ease;
+  }
+  .hint { text-align: center; color: var(--muted); font-family: var(--hand); font-size: 1.1rem; min-height: 1.6rem; margin: .25rem 0 0; }
+
+  .thanks { text-align: center; padding: .5rem 0 0; }
+  .thanks h2 { color: var(--accent); }
+  .thanks p { max-width: 28rem; margin-inline: auto; }
+  .sign { font-family: var(--hand); font-size: 1.4rem; color: var(--ink); }
+
+
+
+  .thanks .big-thanks { font-family: var(--hand); font-weight: 700; font-size: 1.5rem; line-height: 1.45; color: var(--accent); }
+  .thanks .soft { font-family: var(--hand); font-size: 1.3rem; line-height: 1.55; }
+  .tell { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed var(--line); display: grid; gap: .7rem; justify-items: center; }
+  .tell p { margin: 0; color: var(--muted); }
+  .tell .msg { font-family: var(--hand); font-size: 1.15rem; color: var(--ink); background: var(--soft); border-radius: 1rem; padding: .6rem 1rem; user-select: all; }
+  .btns { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+  .btn { font: inherit; font-weight: 800; font-size: .98rem; text-decoration: none; cursor: pointer; border-radius: 999px; padding: .8rem 1.35rem; background: var(--accent); color: var(--accent-ink); border: 1.5px solid var(--accent); }
+  .btn.alt { background: transparent; color: var(--accent); }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+
+  /* Stickers: tilted, staggered, each one drifting on its own timing */
+  .stk { display: block; height: auto; pointer-events: none; mix-blend-mode: var(--blend); background: var(--stk-bg); padding: var(--stk-pad); border-radius: 1.4rem;
+    --r: 0deg; rotate: var(--r);
+    animation: bob var(--bd, 4.4s) ease-in-out var(--bl, 0s) infinite, sway var(--sd, 5.8s) ease-in-out var(--bl, 0s) infinite; }
+  @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+  @keyframes sway { 0%, 100% { rotate: calc(var(--r) - 3deg); } 50% { rotate: calc(var(--r) + 3deg); } }
+
+  .hero-stk { position: relative; aspect-ratio: 1.55 / 1; max-width: 38rem; margin-top: 1.5rem; }
+  .hero-stk .stk { position: absolute; }
+  .hero-stk .h1s { left: 0; top: 0; width: 56%; --r: -7deg; --bd: 4.6s; }
+  .hero-stk .h2s { right: 0; top: 17%; width: 41%; --r: 6deg; --bd: 5.2s; --bl: -1.8s; --sd: 6.4s; }
+  .fh { position: absolute; width: 1.1rem; height: 1.1rem; background: var(--accent); opacity: .75;
+    -webkit-mask: var(--heart) center / contain no-repeat; mask: var(--heart) center / contain no-repeat;
+    --heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.6 1.1 5.4 3.2C13.8 6.1 15.4 5 17.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E");
+    animation: bob 3.6s ease-in-out infinite; }
+  .fh.a { left: 52%; top: 6%; } .fh.b { left: 46%; bottom: 8%; width: .8rem; height: .8rem; animation-delay: -1.4s; } .fh.c { right: 6%; bottom: 4%; width: 1.4rem; height: 1.4rem; animation-delay: -2.4s; }
+
+  /* Picture tiles and transparent cut-out stickers */
+  .pic { display: block; width: min(64%, 17rem); height: auto; margin-top: 1.75rem; border: 6px solid #fff; border-radius: 1.3rem; pointer-events: none;
+    box-shadow: 0 18px 32px -18px rgba(120, 30, 70, .55); --r: 0deg; rotate: var(--r);
+    animation: bob 5s ease-in-out infinite, sway 6.4s ease-in-out infinite; }
+  .pic.r { margin-left: auto; } .pic.l { margin-right: auto; }
+  .stk.hug { width: min(58%, 15rem); margin: 1.5rem 0 0 auto; --r: 3deg; --bd: 5.2s; }
+  .stk-cut { position: absolute; display: block; height: auto; pointer-events: none; --r: 0deg; rotate: var(--r);
+    filter: drop-shadow(0 8px 10px rgba(120, 30, 70, .28));
+    animation: bob var(--bd, 4.6s) ease-in-out var(--bl, 0s) infinite, sway var(--sd, 6s) ease-in-out var(--bl, 0s) infinite; }
+
+  .note { position: relative; padding: 5.6rem 0 6rem; }
+  .note .stk { position: absolute; }
+  .note .c1 { left: -2%; top: 0; width: 42%; max-width: 11rem; --r: -12deg; --bd: 5s; }
+  .note .c2 { right: -3%; bottom: 0; width: 48%; max-width: 12.5rem; --r: 8deg; --bd: 4.4s; --bl: -2s; --sd: 6.8s; }
+  .note .n3 { right: 4%; top: 1%; width: 22%; max-width: 5.5rem; --r: 12deg; --bd: 3.8s; --bl: -1s; }
+  .card { position: relative; z-index: 1; margin-inline: 1.6rem; padding: 2.8rem 1.1rem 2.2rem; text-align: center; border-radius: 1.4rem; transform: rotate(-1.2deg);
+    background: radial-gradient(rgba(240, 138, 166, .2) 1.6px, transparent 1.8px) 0 0 / 18px 18px, var(--paper);
+    box-shadow: 0 18px 34px -18px rgba(120, 30, 70, .5), 0 0 0 1px var(--line); outline: 2px dashed var(--accent); outline-offset: -11px; }
+  .card .tape { position: absolute; top: -.7rem; width: 4rem; height: 1.5rem; background: rgba(240, 138, 166, .6); }
+  .card .t1 { left: 1.1rem; rotate: -8deg; } .card .t2 { right: 1.1rem; rotate: 7deg; }
+  .lc-intro { margin: 0; font-family: var(--hand); font-size: 1.25rem; color: var(--muted); }
+  .lc-sorry { margin: 0 0 1.1rem; font-family: var(--hand); font-weight: 700; font-size: clamp(2.3rem, 11vw, 3.2rem); line-height: 1.15; color: var(--accent); }
+  .lc-sorry::after { content: ""; display: block; width: 62%; height: 14px; margin: .1rem auto 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14' preserveAspectRatio='none'%3E%3Cpath d='M3 9 Q60 2 120 7 T237 6' fill='none' stroke='%23f08aa6' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+  .hrt { --heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.6 1.1 5.4 3.2C13.8 6.1 15.4 5 17.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E"); display: inline-block; width: 1.5rem; height: 1.5rem; vertical-align: -.1rem; margin-left: .35rem; background: var(--accent);
+    -webkit-mask: var(--heart) center / contain no-repeat; mask: var(--heart) center / contain no-repeat; }
+  .lc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+  .lc-list li { font-family: var(--hand); font-size: 1.18rem; line-height: 1.45; color: var(--ink); text-wrap: balance; }
+  .lc-list b { color: var(--accent); }
+  .lc-thanks { margin: 1.2rem 0 0; font-family: var(--hand); font-weight: 700; font-size: 1.3rem; line-height: 1.5; color: var(--ink); text-wrap: balance;
+    background: linear-gradient(transparent 62%, rgba(240, 138, 166, .38) 62%); display: inline; padding: 0 .2rem; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .lc-emoji { margin: .9rem 0 0; font-size: 1.7rem; letter-spacing: .25rem; line-height: 1.3; }
+
+  .ask > .stk { position: absolute; z-index: 0; }
+  .ask .a1 { top: -2.6rem; left: -.6rem; width: 5.2rem; --r: -9deg; --bd: 4.4s; }
+  .ask .a2 { top: -1.5rem; right: -.5rem; width: 4.7rem; --r: 8deg; --bd: 5.1s; --bl: -1.5s; }
+  .ask .a3 { bottom: -2.8rem; right: -.3rem; width: 6.4rem; --r: 5deg; --bd: 4.8s; --bl: -2.2s; }
+  .ask .a4 { bottom: -1.7rem; left: -.5rem; width: 5rem; --r: -8deg; --bd: 3.9s; --bl: -.8s; }
+  .ask #question, .ask .thanks { position: relative; z-index: 1; }
+
+  canvas.petals { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stk, .fh, .stk-cut, .pic { animation: none; }
+    .yes, .no, .cycle span { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Sirf ap k liy</div>
+    <h1>Sehro,</h1>
+    <div class="cycle" aria-hidden="true"><span id="cycle">Heer</span></div>
+    <p class="lede">Buchy, ye choti si website, sirf ap se maffi mangny k liy.... Zra sa waqt dy den bs....</p>
+    <div class="hero-stk" aria-hidden="true">
+      <img class="stk h1s" src="stk/s2.jpg" alt="" width="640" height="640">
+      <img class="stk h2s" src="stk/s3.jpg" alt="" width="420" height="417">
+      <span class="fh a"></span><span class="fh b"></span><span class="fh c"></span>
+    </div>
+  </header>
+
+  <section class="letter" aria-labelledby="h-ghalti">
+    <h2 id="h-ghalti">Mujh se galti hoi</h2>
+    <p>Muje pta hai k me aksar ap ki bat nhi manti. Na me ap ko samjhti hon na ap muje samjhti hen. Or yar janti hon k me thori zidi hon jo dil me ata bs wo hi krti hon but ap k liy to me ne khud ko kitna badal liya na jan....</p>
+    <p>Or ap ko bs mujh se ak hi shikayat hai k me badal gai hon, to mera bucha asa kuch b nhi hai me bilkul b nhi badli bs ap k dil me muje khony ka khof thora zyada barh gya hai lakin meri jan chahy jo b ho jaye me kahin nhi jaon gi hamesha ap ki rhon gi muje bs ap ka pyar chahiye or kuch b nhi</p>
+    <p>Janti hon me ap ki bat nhi manti hon to ap ko gussa a jata hai phir ap naraz ho jati hen, or ap ka naraz hona muje sub se zyada takleef deta hai.</p>
+    <p>Mohtrma me ap ki har bat manti hon lakin agr ak bat na manon to pta nhi ap itna naraz q ho jati hen......</p>
+    <p>Ap ki bat sunna mery liy mushkil nhi hona chahiye tha. Ap jo b kehti hen muje usy sunna samjhna or manna chahiye..</p>
+    <img class="pic r" src="stk/s6.jpg" alt="" width="598" height="600" style="--r:-4deg">
+  </section>
+
+  <section class="sorry" aria-label="Sorry">
+    <p>Really sorry mera bucha me dobara asa nhi kron gi me dobara apny bety pe gussa nhi kron gi pkka promise</p>
+    <p>Bs last time apni jyro ko maff kr den na buchy please</p>
+    <p class="big">Sorry jan</p>
+    <p class="big">Sorry mera bucha</p>
+    <p class="big">Sorry na mohtrma</p>
+    <p>Ab maff kr den na shahzadi</p>
+    <p>Galti ho gai mujh se beta dobara nhi ho gi</p>
+    <p>Ap to meri pyari Heer hen na maff kr den muje</p>
+    <p>Really sorry kaky</p>
+    <p>Ap ko pta ap to meri jan hen meri zindagi hen mera sub kuch hen ap k bagair to Jyro ko rehna ata hi nhi</p>
+    <p>Please maff kr den na apni jyro ko</p>
+    <p class="big">Dekhain na, ab me apny buchy se sorry bol rhi hon na, to kr den na maff please. Ab kia pairon me bethon gi tb maff kren gi kia?</p>
+    <img class="pic l" src="stk/s7.jpg" alt="" width="600" height="600" style="--r:3deg; width:min(72%,18rem)">
+  </section>
+
+  <section class="letter" aria-labelledby="h-waqt">
+    <h2 id="h-waqt">Jo waqt hum ne sath guzara</h2>
+    <p>Jitna waqt hum ne sath guzara hai, wo mery liy bohat qeemti hai. Ak narazgi us pory waqt se bari nhi ho sakti. Hamara rihsta itna kamzor nhi k meri galtiyon ki waja se khtam ho jaye. Hamary liy hamara rishta zarori hai na k meri ki hoi wo galtiyan jin ki waja se hamary darmyan itni doriyan a gai hen. Manti hon hoi hen mujh se galtiyan but muje qasam se sirf ap ka pyar chahiye me theek ho jaon gi jesi ap ko chahiye hon wesi ho jaon gi me.</p>
+    <p>Muje wo sub wapis chahiye: ap ki batein, ap ka sath, ap ka pyar, ap ki mohbbat or ap ki mery liy care.</p>
+    <img class="stk hug" src="stk/s5.jpg" alt="" width="546" height="563">
+  </section>
+
+  <section aria-labelledby="h-wada">
+    <h2 id="h-wada">Me promise krti hon</h2>
+    <ul class="promises">
+      <li>Pehly ap ki bat sunon gi phir apni bat bolon gi</li>
+      <li>Ap jo bolen gi me wo dehan se sunon gi kuch nhi bolon gi jb tk ap apni bat clearly na bol den....</li>
+      <li>Me ap ki bat sunon gi b or usy understand b kron gi or agr ap ki bat muje nhi samjh ay gi to me pyar se apny bety ko samjhaon gi larai nhi kron gi</li>
+      <li>Ap jesa bolen gi wesa hi kr lon gi</li>
+      <li>Me ap se bilkul b larai nhi kron gi</li>
+      <li>Me ap se bilkul b naraz nhi hon gi</li>
+      <li>Koshish kron gi k dobara ap ko apni bewaqofana harkton ki waja se naraz na kron</li>
+    </ul>
+    <img class="pic l" src="stk/s10.jpg" alt="" width="560" height="836" style="--r:-3deg; width:min(54%,14rem)">
+  </section>
+
+  <section class="letter" aria-labelledby="h-jan">
+    <h2 id="h-jan">Meri Jan</h2>
+    <p>Meri Jan ap meri zindagi hen ap k bagair qasam se khak hon me. Me chahti hon k ap bs hamesha hansti rha kren jb ap udas hoti hen to qasam se muje ye duniyan achi nhi lagti muje kuch b acha nhi lagta muje khud se nafrat hony lagti k meri mohtrma meri waja se udas hen.</p>
+    <p>Me boht koshish krti hon k ap k chehry pe kbi b udasi na ay lakin pta nhi phir b mujh se galtiyan ho jati hen hamesha hi. Qasam se ap muje udas or roti hoi bilkul b achi nhi lagti hen muje to meri Heer hansti hoi khush hi achi lagti hen bs.</p>
+    <p>Or ap jb hansti hen na to mera dil krta k bs ap k samny beth k ap ko dekhti rhon or apna sub kuch ap se war don. Jb ap hansti hen khush hoti hen to muje ye duniyan janat mehsos hoti hai.</p>
+    <p>Bs itna hi bolon gi k ye pagal apni Sehro k bagair nhi reh sakti hai.</p>
+    <p class="love">I LOVE YOU BUCHY</p>
+  </section>
+
+  <section class="note" aria-label="Sorry letter">
+    <img class="stk-cut c1" src="stk/s8.png" alt="" width="483" height="640">
+    <img class="stk-cut c2" src="stk/s9.png" alt="" width="560" height="628">
+    <img class="stk n3" src="stk/s1.png" alt="" width="402" height="390">
+    <div class="card">
+      <span class="tape t1"></span><span class="tape t2"></span>
+      <p class="lc-intro">I just want to say</p>
+      <p class="lc-sorry">(sorry)<span class="hrt"></span></p>
+      <ul class="lc-list">
+        <li><b>Sorry</b> for being rude sometimes.</li>
+        <li><b>Sorry</b> for the times I wasn't there for you.</li>
+        <li><b>Sorry</b> for overreacting &#129760;&#127872;</li>
+        <li><b>Sorry</b> for my mood swings.</li>
+        <li><b>Sorry</b> for saying things I didn't mean.</li>
+        <li><b>Sorry</b> for not expressing myself properly.</li>
+        <li><b>Sorry</b> for the misunderstandings.</li>
+        <li><b>Sorry</b> for everything &#128557;&#127799;</li>
+      </ul>
+      <p><span class="lc-thanks">I'm truly grateful to have you in my life.</span></p>
+      <p class="lc-emoji" aria-hidden="true">&#129730;&#129728;&#129528;&#128048;&#129728;&#8734;</p>
+    </div>
+  </section>
+
+  <section class="ask" aria-labelledby="h-sawal">
+    <img class="stk a1" src="stk/s1.png" alt="" aria-hidden="true" width="402" height="390">
+    <img class="stk a2" src="stk/s3.jpg" alt="" aria-hidden="true" width="420" height="417">
+    <img class="stk a3" src="stk/s4.jpg" alt="" aria-hidden="true" width="640" height="640">
+    <img class="stk a4" src="stk/s2.jpg" alt="" aria-hidden="true" width="640" height="640">
+    <div id="question">
+      <h2 id="h-sawal">Sehro, maff kr den na?</h2>
+      <p class="sub">Dil se maffi mang rahi hon, mera beta.</p>
+      <div class="stage" id="stage">
+        <button class="yes" id="yes" type="button">Haan, maff kiya</button>
+        <button class="no" id="no" type="button">Abhi nahi</button>
+      </div>
+      <p class="hint" id="hint" aria-live="polite"></p>
+    </div>
+
+    <div class="thanks" id="thanks" hidden>
+      <h2>Thank you so much meri jan</h2>
+      <p class="soft">Muje pta tha k ap b mery bagair nhi reh sakti.<br>Muje pta tha k ap muje maff kr den gi.</p>
+      <p class="big-thanks">Love you so much meri Sehro</p>
+
+      <div class="tell">
+        <p>Ab apni Jyro ko bata dein k ap ne maff kr diya.</p>
+        <div class="msg" id="msg">Maine maff kr diya meri Jyro. Love you too</div>
+        <div class="btns">
+          <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Jyro ko bata dein</a>
+          <button class="btn alt" id="copy" type="button">Message copy karo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Rotating pet names under the title */
+  var names = ['Heer', 'Jan', 'Janam', 'Shahzadi', 'Mera Bucha', 'Buchy', 'Kaky', 'Mohtrma', 'Mera Beta'];
+  var cyc = document.getElementById('cycle'), ci = 0;
+  if (!reduce) {
+    setInterval(function () {
+      cyc.classList.add('out');
+      setTimeout(function () { ci = (ci + 1) % names.length; cyc.textContent = names[ci]; cyc.classList.remove('out'); }, 360);
+    }, 2200);
+  }
+
+
+
+  /* The dodging "no" button */
+  var stage = document.getElementById('stage'), yes = document.getElementById('yes'), no = document.getElementById('no'),
+      hint = document.getElementById('hint'), question = document.getElementById('question'), thanks = document.getElementById('thanks');
+  var labels = ['Pkka nhi?', 'Soch to len', 'Please mohtrma', 'Shahzadi please', 'Ak or mauqa den', 'Buchy please', 'Jan bs kr den', 'Last time jan'];
+  var hints = ['', 'Haan wala button bara ho raha hy.', 'Wo ap ka wait kr raha hy.', '', 'Itni der se bhag raha hy bechara.', '', '', 'Ab sirf ak hi button bacha hy.'];
+  var n = 0, done = false, last = 0;
+
+  function place() {
+    no.style.left = ((stage.clientWidth - no.offsetWidth) / 2) + 'px';
+    no.style.top = (stage.clientHeight - no.offsetHeight) + 'px';
+  }
+  place();
+  window.addEventListener('resize', function () { if (n === 0) place(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (n === 0) place(); });
+
+  function dodge() {
+    var now = Date.now();
+    if (done || now - last < 300) return;
+    last = now; n++;
+    var W = stage.clientWidth, H = stage.clientHeight, bw = no.offsetWidth, bh = no.offsetHeight;
+    var sr = stage.getBoundingClientRect(), hr = yes.getBoundingClientRect();
+    var hx0 = hr.left - sr.left - 14, hx1 = hr.right - sr.left + 14, hy0 = hr.top - sr.top - 14, hy1 = hr.bottom - sr.top + 14;
+    var cx = parseFloat(no.style.left) || 0, cy = parseFloat(no.style.top) || 0, x = cx, y = cy;
+    for (var i = 0; i < 30; i++) {
+      var tx = Math.random() * (W - bw), ty = Math.random() * (H - bh);
+      var overlap = tx < hx1 && tx + bw > hx0 && ty < hy1 && ty + bh > hy0;
+      var far = Math.abs(tx - cx) + Math.abs(ty - cy) > 90;
+      if (!overlap && far) { x = tx; y = ty; break; }
+    }
+    no.style.left = x + 'px'; no.style.top = y + 'px';
+    no.textContent = labels[Math.min(n - 1, labels.length - 1)];
+    yes.style.setProperty('--s', (1 + Math.min(n, 8) * 0.07).toFixed(2));
+    hint.textContent = hints[Math.min(n - 1, hints.length - 1)] || '';
+    if (n >= 9) { no.hidden = true; hint.textContent = 'Ab sirf ak hi button bacha hy.'; }
+  }
+  ['pointerenter', 'pointerdown', 'focus', 'click'].forEach(function (ev) { no.addEventListener(ev, dodge); });
+
+
+  /* Tell Jyro: opens WhatsApp with the message ready, or copies it */
+  var msgEl = document.getElementById('msg'), waEl = document.getElementById('wa'), cpEl = document.getElementById('copy');
+  var msgText = msgEl.textContent;
+  waEl.href = 'https://wa.me/?text=' + encodeURIComponent(msgText);
+  cpEl.addEventListener('click', function () {
+    function ok() { cpEl.textContent = 'Copy ho gaya'; }
+    function manual() {
+      var r = document.createRange(); r.selectNodeContents(msgEl);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      cpEl.textContent = 'Message select ho gaya, copy kar lein';
+    }
+    try { navigator.clipboard.writeText(msgText).then(ok, manual); } catch (e) { manual(); }
+  });
+
+  /* Yes: petals and the thank-you */
+  yes.addEventListener('click', function () {
+    if (done) return;
+    done = true;
+    question.hidden = true;
+    thanks.hidden = false;
+    thanks.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    if (!reduce) petals();
+  });
+
+  function petals() {
+    var cv = document.createElement('canvas'); cv.className = 'petals'; cv.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cv);
+    var dpr = window.devicePixelRatio || 1, w = window.innerWidth, h = window.innerHeight;
+    cv.width = w * dpr; cv.height = h * dpr;
+    var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr);
+    var heart = new Path2D('M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.2 5 6.6 5c2 0 3.6 1.1 5.4 3.2C13.8 6.1 15.4 5 17.4 5c3.4 0 5.4 3.6 4.1 6.8C19.5 16.4 12 21 12 21z');
+    var colors = ['#e0446c', '#ff7d9d', '#ffb36b', '#ff9ab3', '#ffd9a8'];
+    var ps = [];
+    for (var i = 0; i < 130; i++) {
+      ps.push({ x: Math.random() * w, y: -20 - Math.random() * h * 0.8, s: 8 + Math.random() * 14, vy: 1.6 + Math.random() * 2.8,
+        sw: Math.random() * 6.28, sp: 0.02 + Math.random() * 0.03, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.06,
+        c: colors[(Math.random() * colors.length) | 0] });
+    }
+    var t0 = performance.now();
+    (function frame(t) {
+      ctx.clearRect(0, 0, w, h);
+      var alive = false;
+      ps.forEach(function (p) {
+        p.y += p.vy; p.sw += p.sp; p.r += p.vr;
+        var x = p.x + Math.sin(p.sw) * 28;
+        if (p.y < h + 30) alive = true;
+        ctx.save(); ctx.translate(x, p.y); ctx.rotate(p.r); ctx.scale(p.s / 24, p.s / 24); ctx.translate(-12, -12);
+        ctx.fillStyle = p.c; ctx.globalAlpha = 0.9; ctx.fill(heart); ctx.restore();
+      });
+      if (alive && t - t0 < 9000) requestAnimationFrame(frame); else cv.remove();
+    })(t0);
+  }
+})();
+</script>
+</body>
+</html>
